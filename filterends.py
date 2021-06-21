@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#cat endpoints.txt | filterends
 
 import sys,html
 from urllib import parse
