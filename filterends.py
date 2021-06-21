@@ -1,3 +1,4 @@
+#this code copied from @m4llok tool - https://github.com/m4ll0k/Bug-Bounty-Toolz/blob/master/collector.py
 #!/usr/bin/python3
 #cat endpoints.txt | filterends
 
