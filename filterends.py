@@ -1,4 +1,5 @@
 #this code copied from @m4llok tool - https://github.com/m4ll0k/Bug-Bounty-Toolz/blob/master/collector.py
+#we can filter unnecessary endpoints from a file
 #!/usr/bin/python3
 #cat endpoints.txt | filterends
 
