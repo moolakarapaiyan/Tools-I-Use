@@ -1,0 +1,81 @@
+#!/bin/bash
+
+echo -n "Enter the name of a wordlist: "
+read WORDLIST
+
+case $WORDLIST in
+
+  dicc)
+
+       file_size=`cat $1 | wc -l`
+
+     if [ $file_size -ne 0 ]; then
+          i=0
+          for domain in `cat $1` ; do
+              i=$((i+1))
+              ffuf -u $domain/FUZZ -w /opt/indhira/test/wordlist/dicc.txt  -fc 501,502,503 -t 100 -D -e php,jsp,asp,aspx,zip,rar,tar,bkp,bak,sql,sql.gz,html,js,csv,log,cgi,swp -ac -od ffuf-out/ -o ffuf-out/hosts$i
+
+          done
+      fi
+    ;;
+
+   raft)
+
+       file_size=`cat $1 | wc -l`
+
+     if [ $file_size -ne 0 ]; then
+          i=0
+          for domain in `cat $1` ; do
+              i=$((i+1))
+              ffuf -u $domain/FUZZ -w /opt/indhira/test/wordlist/raft-medium-directories.txt  -fc 501,502,503 -t 100 -D -e php,jsp,asp,aspx,zip,rar,tar,bkp,bak,sql,sql.gz,html,js,csv,log,cgi,swp -ac -od ffuf-out/ -o ffuf-out/hosts$i
+
+          done
+      fi
+    ;;
+
+   robots)
+
+       file_size=`cat $1 | wc -l`
+
+     if [ $file_size -ne 0 ]; then
+          i=0
+          for domain in `cat $1` ; do
+              i=$((i+1))
+              ffuf -u $domain/FUZZ -w /opt/indhira/test/wordlist/RobotsDisallowed-Top1000.txt  -fc 501,502,503 -t 100 -D -e php,jsp,asp,aspx,zip,rar,tar,bkp,bak,sql,sql.gz,html,js,csv,log,cgi,swp -ac -od ffuf-out/ -o ffuf-out/hosts$i
+
+          done
+      fi
+    ;;
+
+    onelist)
+
+       file_size=`cat $1 | wc -l`
+
+     if [ $file_size -ne 0 ]; then
+          i=0
+          for domain in `cat $1` ; do
+              i=$((i+1))
+              ffuf -u $domain/FUZZ -w /opt/indhira/test/wordlist/onelistforallmicro.txt  -fc 501,502,503 -t 100 -D -e php,jsp,asp,aspx,zip,rar,tar,bkp,bak,sql,sql.gz,html,js,csv,log,cgi,swp -ac -od ffuf-out/ -o ffuf-out/hosts$i
+
+          done
+      fi
+    ;;
+
+     swagger)
+
+       file_size=`cat $1 | wc -l`
+
+     if [ $file_size -ne 0 ]; then
+          i=0
+          for domain in `cat $1` ; do
+              i=$((i+1))
+              ffuf -u $domain/FUZZ -w /opt/indhira/test/wordlist/swagger-wordlist.txt  -fc 501,502,503 -t 100 -D -e php,jsp,asp,aspx,zip,rar,tar,bkp,bak,sql,sql.gz,html,js,csv,log,cgi,swp -ac -od ffuf-out/ -o ffuf-out/hosts$i
+
+          done
+      fi
+    ;;
+
+  *)
+    echo -n "unknown"
+    ;;
+esac
