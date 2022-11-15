@@ -1,0 +1,5 @@
+https://bcss.jetblue.com
+https://bcss1.jetblue.com
+https://bcssdev1.jetblue.com
+https://bcsspoc1.jetblue.com
+https://bcssqa1.jetblue.com
